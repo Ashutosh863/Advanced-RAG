@@ -1,6 +1,6 @@
 # Advanced RAG + Evaluation Framework
 
-## 🚀 Project Overview
+##  Project Overview
 
 This project implements an **Advanced Retrieval-Augmented Generation
 (RAG)** system with an integrated evaluation framework.
@@ -21,7 +21,7 @@ understanding of RAG systems.
 
 ------------------------------------------------------------------------
 
-## 🧠 Architecture
+##  Architecture
 
 User Query\
 ↓\
@@ -35,7 +35,7 @@ Evaluation Module (Semantic Similarity)
 
 ------------------------------------------------------------------------
 
-## 📁 Project Structure
+##  Project Structure
 
 advanced_rag/ │ ├── data/\
 │ └── sample.pdf\
@@ -47,29 +47,24 @@ advanced_rag/ │ ├── data/\
 
 ------------------------------------------------------------------------
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### 1️⃣ Create Virtual Environment (Python 3.12 recommended)
+### 1️ Create Virtual Environment (Python 3.12 recommended)
 
 Windows:
 
     py -3.12 -m venv venv
     venv\Scripts\activate
 
-Mac/Linux:
-
-    python3.12 -m venv venv
-    source venv/bin/activate
-
 ------------------------------------------------------------------------
 
-### 2️⃣ Install Dependencies
+### 2️ Install Dependencies
 
     pip install -r requirements.txt
 
 ------------------------------------------------------------------------
 
-### 3️⃣ Add Your PDF
+### 3️ Add Your PDF
 
 Place your PDF inside:
 
@@ -79,7 +74,7 @@ Or modify the path inside `app.py`.
 
 ------------------------------------------------------------------------
 
-### 4️⃣ Run the Project
+### 4️ Run the Project
 
     python app.py
 
@@ -90,7 +85,7 @@ You will be prompted to:
 
 ------------------------------------------------------------------------
 
-## 📊 Evaluation Metrics
+##  Evaluation Metrics
 
 The system computes:
 
@@ -107,7 +102,7 @@ Similarity Score Interpretation:
 
 ------------------------------------------------------------------------
 
-## 🏗 What This Project Demonstrates
+##  What This Project Demonstrates
 
 -   Practical RAG pipeline design
 -   Embedding-based semantic evaluation
@@ -117,7 +112,7 @@ Similarity Score Interpretation:
 
 ------------------------------------------------------------------------
 
-## 🔥 Future Improvements
+##  Future Improvements
 
 -   Cross-encoder reranking
 -   Multi-query retrieval
@@ -129,9 +124,7 @@ Similarity Score Interpretation:
 
 ------------------------------------------------------------------------
 
-## 🎯 Learning Outcome
-
-By completing this project, you gain:
+##  Learning Outcome
 
 -   Deep understanding of RAG internals
 -   Retrieval tuning skills
