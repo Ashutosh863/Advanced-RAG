@@ -133,7 +133,7 @@ Similarity Score Interpretation:
 
 ------------------------------------------------------------------------
 
-## 👨‍💻 Author
+##  Author
 
 Ashutosh
 
