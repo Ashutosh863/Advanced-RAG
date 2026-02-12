@@ -1,0 +1,11 @@
+langchain
+langchain-community
+langchain-core
+faiss-cpu
+sentence-transformers
+rank-bm25
+transformers
+torch
+pypdf
+numpy
+tqdm
