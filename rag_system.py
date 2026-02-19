@@ -9,9 +9,8 @@ from langchain_core.documents import Document
 from rank_bm25 import BM25Okapi
 from transformers import pipeline
 
-# ----------------------------
+
 # Document Loader + Chunking
-# ----------------------------
 def load_and_split(pdf_path: str) -> List[Document]:
     loader = PyPDFLoader(pdf_path)
     documents = loader.load()
@@ -23,23 +22,17 @@ def load_and_split(pdf_path: str) -> List[Document]:
 
     return splitter.split_documents(documents)
 
-# ----------------------------
 # Embedding Model
-# ----------------------------
 def create_embeddings():
     return HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-# ----------------------------
 # Vector Store
-# ----------------------------
 def build_vector_store(docs, embeddings):
     return FAISS.from_documents(docs, embeddings)
 
-# ----------------------------
 # BM25 Retriever
-# ----------------------------
 class BM25Retriever:
     def __init__(self, docs):
         self.docs = docs
@@ -52,9 +45,7 @@ class BM25Retriever:
         top_indices = np.argsort(scores)[::-1][:top_k]
         return [self.docs[i] for i in top_indices]
 
-# ----------------------------
 # Hybrid Retriever
-# ----------------------------
 class HybridRetriever:
     def __init__(self, vectorstore, bm25):
         self.vectorstore = vectorstore
@@ -67,9 +58,9 @@ class HybridRetriever:
         combined = list({doc.page_content: doc for doc in vector_docs + bm25_docs}.values())
         return combined[:top_k]
 
-# ----------------------------
+
 # LLM Generator (Local HF Model)
-# ----------------------------
+
 generator = pipeline("text-generation", model="google/flan-t5-base")
 
 def generate_answer(query, context_docs):
@@ -85,3 +76,4 @@ def generate_answer(query, context_docs):
 
     output = generator(prompt, max_length=300, do_sample=False)
     return output[0]["generated_text"]
+
